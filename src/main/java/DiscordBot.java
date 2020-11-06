@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity.ActivityType;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.internal.entities.EntityBuilder;
+import util.ConfigLoader;
 
 public class DiscordBot {
 	private ConfigLoader cl;
@@ -19,7 +20,7 @@ public class DiscordBot {
 		cl = new ConfigLoader(path);
 	}
 	
-	public void initialize() throws LoginException {
+	public void initializeJDA() throws LoginException {
 		// Bot login.
 		String discordToken = (String) cl.getObject("discordToken");
 		
@@ -32,6 +33,13 @@ public class DiscordBot {
 		jdaBuilder.setActivity(EntityBuilder.createActivity(activityName, activityURL, activityType));
 		
 		jda = jdaBuilder.build();
+	}
+	
+	public void initializePreMessages() throws IOException, ParseException {
+		boolean loadPreCommands = (Boolean) cl.getObject("loadPreCommands");
+		if (!loadPreCommands) return;
+		String preCommandsPath = (String) cl.getObject("preCommandsPath");
+		newListener(new CommandsPreMessages(preCommandsPath));
 	}
 	
 	public void newListener(ListenerAdapter listener) {

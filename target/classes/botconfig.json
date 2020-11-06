@@ -1,6 +1,7 @@
 {
- "discordToken": "COLOQUE AQUI O TOKEN",
+ "discordToken": "INSIRA AQUI O TOKEN",
  "activityName": "dando bom dia a todo mundo!",
  "activityURL": "https://lucasgsa.github.io",
- "loadcommands": true
+ "loadPreCommands": true,
+ "preCommandsPath": "configFiles/messages.json"
 }
