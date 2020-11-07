@@ -1,3 +1,7 @@
 {
- "bom dia": "Bom dia para você também amigo(a) &author!"
+ "bom dia": "Bom dia para você também amigo(a) &author!",
+ "boa tarde": "Boa tarde? Você quis dizer bom dia, certo?",
+ "boa noite": "Opa meu bom, bom dia, ainda não passou de 23h59, então ainda é dia!"
+ "alguém?": "Olá, tem eu, será que serve?",
+ "alguem?": "Olá, tem eu, será que serve?"
 }

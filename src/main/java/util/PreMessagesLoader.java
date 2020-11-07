@@ -19,6 +19,7 @@ public class PreMessagesLoader {
 		JSONParser jparser = new JSONParser();
 		BufferedReader fr = new BufferedReader(new InputStreamReader(new FileInputStream(this.path), "UTF-8"));
 		json = (JSONObject) jparser.parse(fr);
+		fr.close();
 		System.out.println("PreMessagesLoader - Mensagens pré-criadas carregadas com sucesso!");
 	}
 	
