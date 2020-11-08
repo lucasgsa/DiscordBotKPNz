@@ -27,18 +27,4 @@
     <url>https://jcenter.bintray.com</url>
 	</repository>
   </repositories>
-  
-      <build>
-      <plugins>
-        <plugin>
-	      <groupId>com.heroku.sdk</groupId>
-	      <artifactId>heroku-maven-plugin</artifactId>
-	      <configuration>
-	        <processTypes>
-	          <web>java -jar BotLauncher.jar</web>
-	        </processTypes>
-	      </configuration>
-	    </plugin>
-      </plugins>
-    </build>
 </project>
